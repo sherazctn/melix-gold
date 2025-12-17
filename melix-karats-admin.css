@@ -1,0 +1,28 @@
+.melix-wrap{max-width:100% !important; padding:12px;}
+.melix-log-table-headers{display:flex;gap:12px;padding:8px 12px;background:#f5f6f7;border:1px solid #e9eaeb;border-radius:6px;margin-bottom:8px;font-weight:700;}
+.melix-log-table-headers .col-transaction{flex: 1;}
+.melix-log-table-headers .col-status{width:140px;text-align:center;}
+.melix-log-table-headers .col-time{width:260px;text-align:right;}
+
+.melix-log-row{display:flex;align-items:flex-start;gap:10px;padding:12px;border-bottom:1px solid #f6f6f6;font-size:13px;background:#fff;}
+.melix-log-row:nth-child(odd){background:#fcfcfd;}
+.col-transaction{flex:1;display:flex;flex-direction:column;}
+.col-status{width:140px;display:flex;align-items:center;justify-content:center;}
+.col-time{width:260px;text-align:right;color:#666;}
+
+.melix-change-row{padding:6px 0;border-bottom:0;font-size:14px;}
+.melix-change-icon{display:inline-block;min-width:20px;text-align:center;margin-right:8px;font-weight:bold;}
+.melix-arrow-up{color:#117a37;}
+.melix-arrow-down{color:#a12b2b;}
+.melix-arrow-eq{color:#666;}
+
+.melix-status{padding:6px 10px;border-radius:6px;font-size:13px;}
+.melix-success{background:#e6f8ee;color:#117a37;border:1px solid #cfead1;}
+.melix-error{background:#fff1f1;color:#a12b2b;border:1px solid #f7cfcf;padding:6px 10px;border-radius:6px;}
+
+.melix-meta{color:#666;font-size:12px;margin-left:12px;}
+
+/* make sure change rows look nice */
+.melix-change-row strong{margin-right:6px;}
+
+.melix-gap-preview {margin-top: 4px; font-size: 12px;}
