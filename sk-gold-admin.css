@@ -1,0 +1,97 @@
+/* --- Main Layout --- */
+.melix-wrap { max-width: 100% !important; padding: 12px; }
+
+/* --- TABS LOGIC (Fixes the "Everything on one page" issue) --- */
+.nav-tab-wrapper { margin-bottom: 20px; border-bottom: 1px solid #c3c4c7; }
+.melix-tab-content { display: none; } /* Hide tabs by default */
+.melix-tab-content.active { display: block; } /* Show only active tab */
+
+/* --- Filters Bar (Logs Page) --- */
+.melix-filters-bar {
+    background: #fff; padding: 15px; border: 1px solid #c3c4c7; border-radius: 6px;
+    margin-bottom: 20px; display: flex; gap: 10px; align-items: center; flex-wrap: wrap;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+}
+.melix-filters-bar input, .melix-filters-bar select { height: 32px; line-height: 1; vertical-align: middle; }
+.melix-filters-bar #filter-date { max-width: 140px; }
+.melix-filters-bar #melix-log-search { max-width: 200px; }
+
+/* --- Log Table Styling --- */
+#melix-logs-dashboard {
+    background: #fff; border: 1px solid #c3c4c7; border-radius: 6px; 
+    box-shadow: 0 1px 2px rgba(0,0,0,0.02); margin-top: 10px;
+}
+
+.melix-log-table-headers {
+    display: flex; gap: 12px; padding: 10px 12px;
+    background: #f5f6f7; border-bottom: 1px solid #c3c4c7;
+    border-radius: 6px 6px 0 0;
+    font-weight: 700; font-size: 13px; text-transform: uppercase; color: #555;
+}
+.melix-log-table-headers .col-transaction { flex: 1; }
+.melix-log-table-headers .col-status { width: 160px; text-align: center; } 
+.melix-log-table-headers .col-time { width: 260px; text-align: right; }
+
+.melix-log-row {
+    display: flex; 
+    align-items: center; /* Vertically Center Everything */
+    gap: 10px; padding: 12px;
+    border-bottom: 1px solid #f6f6f6; font-size: 13px; background: #fff;
+}
+.melix-log-row:nth-child(odd) { background: #fcfcfd; }
+.melix-log-row:last-child { border-bottom: none; border-radius: 0 0 6px 6px; }
+.melix-log-row:hover { background: #f8f9fa; }
+
+/* --- Columns --- */
+.col-transaction { flex: 1; display: flex; flex-direction: column; justify-content: center; }
+
+/* STATUS COLUMN FIX: Text goes UNDER Badge */
+.col-status {
+    width: 160px;
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center;
+}
+.col-time { width: 260px; text-align: right; color: #666; }
+
+/* --- Animations --- */
+@keyframes melixFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-3px); }
+}
+@keyframes melixPulse {
+    0% { box-shadow: 0 0 0 0 rgba(70, 180, 80, 0.7); }
+    70% { box-shadow: 0 0 0 6px rgba(70, 180, 80, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(70, 180, 80, 0); }
+}
+
+/* --- Arrows & Badges --- */
+.melix-arrow-up, .melix-arrow-down {
+    display: inline-block; font-weight: bold; font-size: 1.2em;
+    animation: melixFloat 1.5s ease-in-out infinite; /* Loop Animation */
+}
+.melix-arrow-up { color: #117a37; } 
+.melix-arrow-down { color: #a12b2b; }
+.melix-arrow-eq { color: #999; }
+
+.melix-status { padding: 5px 10px; border-radius: 4px; font-size: 11px; font-weight: 700; text-transform: uppercase; display: inline-block; margin-bottom: 4px; }
+.melix-success { background: #e6f8ee; color: #117a37; border: 1px solid #cfead1; }
+.melix-error { background: #fff1f1; color: #a12b2b; border: 1px solid #f7cfcf; }
+
+/* --- API Pulsate Dot --- */
+.melix-status-dot { height: 10px; width: 10px; border-radius: 50%; display: inline-block; margin-right: 6px; }
+.melix-dot-green { background-color: #46b450; box-shadow: 0 0 3px #46b450; animation: melixPulse 2s infinite; }
+.melix-dot-red { background-color: #dc3232; box-shadow: 0 0 3px #dc3232; }
+.melix-status-text { font-weight: 600; }
+.melix-active { color: #46b450; }
+.melix-inactive { color: #dc3232; }
+
+/* --- Misc --- */
+.melix-change-row { padding: 3px 0; border-bottom: 0; font-size: 14px; }
+.melix-change-row strong { margin-right: 6px; color: #333; }
+.melix-change-icon { display: inline-block; min-width: 20px; text-align: center; margin-right: 8px; }
+#melix-logs-pagination { margin-top: 15px; display: flex; gap: 5px; align-items: center; }
+.melix-page-btn { min-width: 30px; text-align: center; justify-content: center; }
+.api-usage-info { background: #f0f6fc; border: 1px solid #c5d9ed; border-left: 4px solid #72aee6; padding: 10px 15px; margin-top: 12px; display: block; max-width: 500px; border-radius: 4px; }
+.melix-gap-preview { margin-top: 4px; font-size: 12px; color: #666; }
