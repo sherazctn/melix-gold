@@ -24,7 +24,7 @@
 
         // compute simple product price and disable fields if karat selected
         function computeSimple(){
-            var $karat = $('#melix_karat');
+            var $karat = $('select[name="melix_karat"]');
             var $weight = $('#melix_weight');
             var $markup = $('#melix_markup');
             if (!$karat.length) return;
